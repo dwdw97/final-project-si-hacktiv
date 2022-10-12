@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">1-ToDoList</string>
+    <string name="btn_completed">TASK COMPLETED</string>
+</resources>
