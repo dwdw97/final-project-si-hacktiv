@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CalculationAdapter.HistoryClickListener {
 
     private TextView tvCurrentCalculation, tvResult;
     private Button btnClear;
@@ -60,9 +60,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         db = new SQLiteDatabaseHandler(this);
         calculationList = (ArrayList<Calculation>) db.getAllCalculation();
-        calculationAdapter = new CalculationAdapter(calculationList);
+        calculationAdapter = new CalculationAdapter(calculationList, this);
         recyclerView.setAdapter(calculationAdapter);
-        recyclerView.smoothScrollToPosition(calculationAdapter.getItemCount()-1);
+        if(calculationList.size() != 0) {
+            recyclerView.smoothScrollToPosition(calculationAdapter.getItemCount()-1);
+        }
 //        recyclerView.getAdapter().notifyDataSetChanged();
 
 
@@ -257,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
                 finalized = true;
             }
         });
+
     }
 
     void onNumberPressed(String text) {
@@ -366,5 +369,28 @@ public class MainActivity extends AppCompatActivity {
 
     String getPreference(String key){
         return this.getSharedPreferences("AndroidCycle", Context.MODE_PRIVATE).getString(key, null);
+    }
+
+    @Override
+    public void onHistoryItemClick(int position) {
+        if(finalized) {
+            calculationList.add(currentCalc);
+            db.addCalculation(currentCalc);
+            recyclerView.getAdapter().notifyDataSetChanged();
+            currentCalc = calculationList.get(position);
+            showCurrentCalc();
+            recyclerView.smoothScrollToPosition(calculationAdapter.getItemCount()-1);
+
+            tvCurrentCalculation.setTextSize(50);
+            tvCurrentCalculation.setTextColor(getResources().getColor(R.color.black, null));
+            tvResult.setTextSize(35);
+            tvResult.setTextColor(getResources().getColor(R.color.less_black, null));
+            finalized = false;
+        } else {
+            currentCalc = calculationList.get(position);
+            tvResult.setVisibility(View.VISIBLE);
+            showCurrentCalc();
+        }
+
     }
 }

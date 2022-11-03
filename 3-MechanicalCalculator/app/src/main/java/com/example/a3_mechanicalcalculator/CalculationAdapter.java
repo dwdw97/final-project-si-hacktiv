@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -13,9 +14,11 @@ import java.util.ArrayList;
 public class CalculationAdapter extends RecyclerView.Adapter<CalculationAdapter.CalculationViewHolder> {
 
     ArrayList<Calculation> calculationList = new ArrayList<>();
+    private HistoryClickListener historyClickListener;
 
-    public CalculationAdapter(ArrayList<Calculation> calculationList) {
+    public CalculationAdapter(ArrayList<Calculation> calculationList, HistoryClickListener historyClickListener) {
         this.calculationList = calculationList;
+        this.historyClickListener = historyClickListener;
     }
 
     @NonNull
@@ -39,12 +42,27 @@ public class CalculationAdapter extends RecyclerView.Adapter<CalculationAdapter.
 
     public class CalculationViewHolder extends RecyclerView.ViewHolder{
         private TextView tvHistoryCalc, tvHistoryResult;
+        private ConstraintLayout historyItem;
 
         public CalculationViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvHistoryCalc = itemView.findViewById(R.id.tvHistoryCalc);
             tvHistoryResult = itemView.findViewById(R.id.tvHistoryResult);
+            historyItem = itemView.findViewById(R.id.historyItem);
+
+            historyItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+
+                    historyClickListener.onHistoryItemClick(position);
+                }
+            });
         }
+    }
+
+    public interface HistoryClickListener {
+        void onHistoryItemClick(int position);
     }
 }
