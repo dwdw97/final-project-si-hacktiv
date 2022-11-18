@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="item_categories">
+        <item>Select Category</item>
+        <item>Clothing</item>
+        <item>Electronic</item>
+        <item>Book</item>
+        <item>Other</item>
+    </string-array>
+
+    <integer-array name="category_icons">
+        <item>@drawable/category_clothing</item>
+        <item>@drawable/category_electronic</item>
+        <item>@drawable/category_book</item>
+        <item>@drawable/category_other</item>
+    </integer-array>
+
+    <string-array name="Clothing_filter">
+        <item>Man</item>
+        <item>Woman</item>
+        <item>Neutral</item>
+    </string-array>
+
+    <string-array name="Electronic_filter">
+        <item>Computer</item>
+        <item>Smartphone</item>
+        <item>Other</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context=".Admin.AddStaffActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarStaff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:elevation="10dp"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/staff_registration"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/txtStaffName"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius_textbox"
+        android:hint="@string/full_name"
+        android:elevation="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/tahoma_regular"
+        app:layout_constraintTop_toBottomOf="@id/toolbarStaff"/>
+
+    <EditText
+        android:id="@+id/txtStaffEmail"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius_textbox"
+        android:hint="@string/email"
+        android:elevation="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/tahoma_regular"
+        app:layout_constraintTop_toBottomOf="@+id/txtStaffName" />
+
+    <EditText
+        android:id="@+id/txtStaffPass1"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius_textbox"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:elevation="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/tahoma_regular"
+        app:layout_constraintTop_toBottomOf="@+id/txtStaffEmail" />
+
+    <EditText
+        android:id="@+id/txtStaffPass2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius_textbox"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:elevation="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/tahoma_regular"
+        app:layout_constraintTop_toBottomOf="@+id/txtStaffPass1" />
+
+    <Button
+        android:id="@+id/btnStaffRegister"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cornerRadius="10dp"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/add_staff"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/tahoma_regular"
+        app:layout_constraintTop_toBottomOf="@id/txtStaffPass2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

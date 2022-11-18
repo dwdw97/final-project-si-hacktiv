@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "851260150106",
+    "firebase_url": "https://ecommerce-hacktiv-f2-default-rtdb.firebaseio.com",
+    "project_id": "ecommerce-hacktiv-f2",
+    "storage_bucket": "ecommerce-hacktiv-f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851260150106:android:f4263507755bf6d7e3e363",
+        "android_client_info": {
+          "package_name": "com.hacktiv.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851260150106-n39eoi4ol23t5luv379t6od6bov3ghaq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hacktiv.ecommerce",
+            "certificate_hash": "4160c25429b81fe45c443eb015b69c6792551bd1"
+          }
+        },
+        {
+          "client_id": "851260150106-7m4ns0ck95k6r3khrr3mvo35r0spu4o4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZHrtmWURt92734n9b-Sb_tHVCy5N975o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851260150106-7m4ns0ck95k6r3khrr3mvo35r0spu4o4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
